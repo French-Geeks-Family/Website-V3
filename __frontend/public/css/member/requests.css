@@ -1,0 +1,14 @@
+
+table,td,th {
+    border: var(--border-size) var(--border-type) var(--border-color);
+}
+thead,tfoot {
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+.table-requests{
+    width: 70%;
+    margin-left: 15%;
+    text-align: center;
+  }

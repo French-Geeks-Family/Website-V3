@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--<script type="text/javascript" src="/static/js/admin.js"></script>-->
+  <!-- Bootstrap CSS -->
+  <%- include ('../include/bootstrap/bootstrap.css.ejs'); -%>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <link rel="stylesheet" href="/static/css/forum/categories.css">
+    <%- include ('../include/meta'); -%>
+      <title>FGF Forum</title>
+</head>
+
+<body>
+  <%- include ('../include/nav.ejs'); -%>
+    <main role="main">
+
+      <section id="container">
+        <h2 class="title">Liste des forums :</h2>
+        <br>
+        <% groupes.forEach(element=> { %>
+          <h3 class="sub-title">
+            <%console.log(element)%>
+              <%=element.cat_container_name%> :
+          </h3>
+          <div class="cat_container">
+            <% categories.forEach(categorie=> { %>
+              <%console.log(categorie)%>
+                <% if(element.cat_container_id===categorie.cat_container){ %>
+                  <div class="categorie">
+                    <h4><img src="/static/images/icons/<%=categorie.cat_icon%>" alt="icon" class="icon">&nbsp;<a
+                        href="/forum/categorie/<%=categorie.cat_id%>/1">
+                        <%=categorie.cat_nom%>
+                      </a></h4>
+                    <p>
+                      <%=categorie.cat_description%>
+                    </p>
+                    <h6>Dernier message :</h6>
+                    <hr>
+                    <%if(categorie.post_texte && categorie.member_id){%>
+                      <p>
+                        <img src="/uploads/avatars/<%=categorie.member_avatar%>" alt="avatar" width="35">
+                        <%= categorie.member_pseudo + ':' %>
+                          <%=categorie.post_texte %>
+                      </p>
+                      <%}else{%>
+                        <p>Aucun dernier message dans ce topic</p>
+                        <%}%>
+                  </div>
+                  <% } %>
+                    <% }); %>
+          </div>
+          <% }); %>
+
+      </section>
+    </main>
+    <%- include ('../include/footer.ejs'); -%>
+      <%- include ('../include/bootstrap/bootstrap.js.ejs'); -%>
+</body>
+
+</html>

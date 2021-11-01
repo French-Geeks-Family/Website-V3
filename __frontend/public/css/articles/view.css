@@ -1,0 +1,38 @@
+
+
+#container-article{
+    width: 80%;
+    margin-top: 2%;
+    margin-left: 10%;
+    background-color: var(--container-color);
+}
+#article{padding: 4% 7% 4% 7%;}
+.title{color: var(--title-color);font-size: var(--title-size);}
+.content{text-align: justify;}
+.author{color:var(--color-grey)}
+.author-avatar{width: 5%;}
+table,td {
+    border: 1px solid rgb(143, 138, 138);
+}
+thead,tfoot {
+    background-color: rgb(143, 138, 138);
+    color: #fff;
+}
+.content img{
+    max-width: 80%;
+}
+#center{
+    display: block;
+    text-align: center;
+}
+#table-members{
+    margin: auto;
+    max-width: 70%;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+@media screen and (max-width: 550px){
+    #container-article{width: 98%;margin-left: 1%;}
+    .author-avatar{width: 10%;}
+}

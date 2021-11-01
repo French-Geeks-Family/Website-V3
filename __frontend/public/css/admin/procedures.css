@@ -1,0 +1,17 @@
+
+
+
+
+#container{
+    width: var(--width);
+    margin-left: var(--margin-left);
+    background-color: var(--container-color);
+}
+
+@media screen and (max-width: 550px){
+    #container{
+        width: 95%;
+        margin-left:2.5%;
+    }
+
+}

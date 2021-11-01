@@ -1,0 +1,15 @@
+<%if(permissions && permissions.length){ %>
+  <% if(permissions.includes('ADMINISTRATOR')){%> <span class="badge bg-dark">Administrateur</span>
+    <%} %>
+
+      <% if(permissions.includes('STAFF')){%> <span class="badge bg-danger">Staff</span>
+        <%} %>
+
+          <% if(permissions.includes('MODERATOR')){%> <span class="badge bg-primary">Modérateur</span>
+            <%} %>
+              <% if(permissions.includes('EDITOR')){%> <span class="badge bg-success">Rédacteur</span>
+                <%} %>
+                  <% if(permissions.includes('TESTEUR')){%> <span class="badge bg-warning">Testeur</span>
+                    <%} %>
+
+                      <%} %>

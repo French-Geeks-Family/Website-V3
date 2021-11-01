@@ -1,0 +1,23 @@
+name: deploy to production
+# on:
+#  push:
+#    branches: [ master ]
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - name: pull
+      run: |
+        cd /home/fgf/fgf-site/prod
+        git pull origin master
+        cd ./__frontend
+        npm prune --production
+        npm install --production
+        cd ../backend
+        npm prune --production
+        npm install --production
+        cd ..
+        pm2 reload ecosystem.config.js --env production
