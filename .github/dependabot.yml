@@ -7,7 +7,16 @@ version: 2
 updates:
 # Fetch and update latest `npm` packages
 - package-ecosystem: npm
-  directory: '/'
+  directory: '/backend'
+  schedule:
+    interval: daily
+  reviewers:
+    - Smaug6739
+  assignees:
+    - Smaug6739
+# Fetch and update latest `npm` packages
+- package-ecosystem: npm
+  directory: '/__frontend'
   schedule:
     interval: daily
   reviewers:
